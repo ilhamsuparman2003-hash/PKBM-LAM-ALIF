@@ -1,0 +1,1787 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PKBM Lam Alif | Pusat Kegiatan Belajar Masyarakat</title>
+
+    <meta name="description"
+        content="Website resmi PKBM Lam Alif. Menyediakan program pendidikan kesetaraan Paket A, Paket B dan Paket C.">
+
+    <meta name="keywords"
+        content="PKBM, Paket A, Paket B, Paket C, pendidikan kesetaraan, sekolah PKBM">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #263238;
+            background: #f8fafc;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #ffffff;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .nav-container {
+            max-width: 1150px;
+            margin: auto;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: #0d6efd;
+            color: white;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .logo-text h2 {
+            font-size: 18px;
+            color: #123b6d;
+        }
+
+        .logo-text span {
+            font-size: 11px;
+            color: #777;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-menu a {
+            font-size: 14px;
+            font-weight: 600;
+            color: #444;
+            transition: 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #0d6efd;
+        }
+
+        .btn-daftar {
+            background: #0d6efd;
+            color: white !important;
+            padding: 10px 18px;
+            border-radius: 8px;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background:
+                linear-gradient(
+                    rgba(13, 110, 253, 0.90),
+                    rgba(18, 59, 109, 0.92)
+                ),
+                url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            min-height: 580px;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1150px;
+            width: 100%;
+            margin: auto;
+            padding: 80px 20px;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-content .label {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 7px 15px;
+            border-radius: 50px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #ffd43b;
+        }
+
+        .hero p {
+            font-size: 17px;
+            max-width: 650px;
+            margin-bottom: 30px;
+            color: #eef5ff;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: #ffd43b;
+            color: #183153;
+            padding: 13px 23px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: inline-block;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid white;
+            color: white;
+            padding: 13px 23px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        /* =========================
+           GENERAL
+        ========================= */
+
+        .section {
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #0d6efd;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title h2 {
+            font-size: 34px;
+            margin-top: 8px;
+            color: #173f6b;
+        }
+
+        .section-title p {
+            max-width: 650px;
+            margin: 10px auto;
+            color: #6b7280;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about {
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-image {
+            height: 380px;
+            border-radius: 20px;
+            overflow: hidden;
+            background:
+                url("https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=80")
+                center/cover;
+        }
+
+        .about-content h3 {
+            font-size: 30px;
+            color: #173f6b;
+            margin-bottom: 20px;
+        }
+
+        .about-content p {
+            color: #667085;
+            margin-bottom: 15px;
+        }
+
+        .about-list {
+            margin-top: 20px;
+            list-style: none;
+        }
+
+        .about-list li {
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .about-list li::before {
+            content: "✓";
+            color: #0d6efd;
+            margin-right: 10px;
+        }
+
+        /* =========================
+           VISI MISI
+        ========================= */
+
+        .vision-section {
+            background: #f1f6fc;
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .vision-card {
+            background: white;
+            padding: 35px 30px;
+            border-radius: 16px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+
+        .vision-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 12px;
+            background: #e7f1ff;
+            color: #0d6efd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .vision-card h3 {
+            margin-bottom: 12px;
+            color: #173f6b;
+        }
+
+        .vision-card p {
+            color: #68707d;
+        }
+
+        .vision-card ul {
+            padding-left: 18px;
+            color: #68707d;
+        }
+
+        /* =========================
+           PROGRAM
+        ========================= */
+
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .program-card {
+            background: white;
+            border-radius: 16px;
+            padding: 35px 30px;
+            border: 1px solid #e7eaf0;
+            transition: 0.3s;
+        }
+
+        .program-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .program-number {
+            font-size: 45px;
+            font-weight: bold;
+            color: #0d6efd;
+            margin-bottom: 10px;
+        }
+
+        .program-card h3 {
+            font-size: 24px;
+            color: #173f6b;
+            margin-bottom: 10px;
+        }
+
+        .program-card p {
+            color: #68707d;
+            margin-bottom: 18px;
+        }
+
+        .program-card ul {
+            padding-left: 18px;
+            color: #555;
+        }
+
+        /* =========================
+           CARA MENDAFTAR
+        ========================= */
+
+        .register-info {
+            background: #173f6b;
+            color: white;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        .step-number {
+            width: 55px;
+            height: 55px;
+            background: #ffd43b;
+            color: #173f6b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .step h3 {
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            color: #dbe8f7;
+            font-size: 14px;
+        }
+
+        /* =========================
+           BERITA
+        ========================= */
+
+        .news {
+            background: white;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .news-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #e8ebef;
+            transition: 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-image {
+            height: 190px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .news-content {
+            padding: 22px;
+        }
+
+        .news-date {
+            font-size: 12px;
+            color: #0d6efd;
+            font-weight: bold;
+        }
+
+        .news-content h3 {
+            font-size: 19px;
+            color: #173f6b;
+            margin: 8px 0;
+        }
+
+        .news-content p {
+            color: #6b7280;
+            font-size: 14px;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            color: #0d6efd;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        /* =========================
+           FORM
+        ========================= */
+
+        .registration {
+            background: #f1f6fc;
+        }
+
+        .form-wrapper {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 7px;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d8dee7;
+            border-radius: 8px;
+            outline: none;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            height: 110px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #0d6efd;
+        }
+
+        .submit-btn {
+            border: none;
+            background: #0d6efd;
+            color: white;
+            padding: 14px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .submit-btn:hover {
+            background: #0957c7;
+        }
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            background: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .contact-card {
+            text-align: center;
+            padding: 30px;
+            border: 1px solid #e8ebef;
+            border-radius: 15px;
+        }
+
+        .contact-card .icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .contact-card h3 {
+            color: #173f6b;
+            margin-bottom: 8px;
+        }
+
+        .contact-card p {
+            color: #68707d;
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #102f50;
+            color: white;
+            padding: 45px 20px 20px;
+        }
+
+        .footer-grid {
+            max-width: 1150px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p {
+            color: #c9d7e7;
+            font-size: 14px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            margin-bottom: 8px;
+            color: #c9d7e7;
+            font-size: 14px;
+        }
+
+        .copyright {
+            max-width: 1150px;
+            margin: 35px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            text-align: center;
+            color: #b9c8d8;
+            font-size: 13px;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 900px) {
+
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .about-grid,
+            .vision-grid,
+            .program-grid,
+            .news-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .section {
+                padding: 60px 15px;
+            }
+
+            .hero {
+                min-height: 520px;
+            }
+
+            .hero-container {
+                padding: 60px 20px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .about-image {
+                height: 280px;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .form-wrapper {
+                padding: 25px 18px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .logo-text h2 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+        <div class="nav-container">
+
+            <a href="#home" class="logo">
+
+                <div class="logo-icon">
+                    PK
+                </div>
+
+                <div class="logo-text">
+                    <h2>PKBM Lam Alif</h2>
+                    <span>Pusat Kegiatan Belajar Masyarakat</span>
+                </div>
+
+            </a>
+
+            <nav>
+                <ul class="nav-menu">
+
+                    <li>
+                        <a href="#about">Tentang Kami</a>
+                    </li>
+
+                    <li>
+                        <a href="#visi">Visi & Misi</a>
+                    </li>
+
+                    <li>
+                        <a href="#program">Program</a>
+                    </li>
+
+                    <li>
+                        <a href="#berita">Berita</a>
+                    </li>
+
+                    <li>
+                        <a href="#pendaftaran" class="btn-daftar">
+                            Daftar Sekarang
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-container">
+
+            <div class="hero-content">
+
+                <span class="label">
+                    Pendidikan Kesetaraan
+                </span>
+
+                <h1>
+                    Belajar Hari Ini,
+                    <span>Raih Masa Depan</span>
+                    Lebih Baik
+                </h1>
+
+                <p>
+                    PKBM Lam Alif hadir sebagai wadah pendidikan
+                    masyarakat untuk membantu setiap individu
+                    mendapatkan kesempatan belajar melalui program
+                    Paket A, Paket B dan Paket C.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#pendaftaran" class="btn-primary">
+                        Daftar Sekarang
+                    </a>
+
+                    <a href="#program" class="btn-outline">
+                        Lihat Program
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section class="section about" id="about">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Tentang Kami</span>
+
+                <h2>Mengenal PKBM Lam Alif</h2>
+
+                <p>
+                    Tempat belajar yang terbuka bagi masyarakat
+                    untuk mendapatkan pendidikan dan meningkatkan
+                    keterampilan.
+                </p>
+
+            </div>
+
+            <div class="about-grid">
+
+                <div class="about-image"></div>
+
+                <div class="about-content">
+
+                    <h3>
+                        Pendidikan untuk Semua
+                    </h3>
+
+                    <p>
+                        PKBM Lam Alif merupakan lembaga pendidikan
+                        nonformal yang memberikan kesempatan kepada
+                        masyarakat untuk melanjutkan pendidikan melalui
+                        program pendidikan kesetaraan.
+                    </p>
+
+                    <p>
+                        Kami percaya bahwa setiap orang memiliki hak
+                        untuk belajar, berkembang dan memiliki masa
+                        depan yang lebih baik.
+                    </p>
+
+                    <ul class="about-list">
+
+                        <li>
+                            Pendidikan kesetaraan
+                        </li>
+
+                        <li>
+                            Lingkungan belajar yang nyaman
+                        </li>
+
+                        <li>
+                            Pendampingan peserta didik
+                        </li>
+
+                        <li>
+                            Terbuka untuk masyarakat
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         VISI MISI
+    ========================== -->
+
+    <section class="section vision-section" id="visi">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Visi & Misi</span>
+
+                <h2>Tujuan Pendidikan Kami</h2>
+
+                <p>
+                    Membangun masyarakat yang berpendidikan,
+                    mandiri dan mampu berkembang.
+                </p>
+
+            </div>
+
+
+            <div class="vision-grid">
+
+                <div class="vision-card">
+
+                    <div class="vision-icon">
+                        ★
+                    </div>
+
+                    <h3>
+                        Visi
+                    </h3>
+
+                    <p>
+                        Menjadi pusat kegiatan belajar masyarakat
+                        yang berkualitas, inklusif dan mampu
+                        memberikan kesempatan pendidikan bagi
+                        seluruh lapisan masyarakat.
+                    </p>
+
+                </div>
+
+
+                <div class="vision-card">
+
+                    <div class="vision-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        Misi
+                    </h3>
+
+                    <ul>
+
+                        <li>
+                            Memberikan layanan pendidikan yang
+                            mudah diakses.
+                        </li>
+
+                        <li>
+                            Meningkatkan kualitas pembelajaran.
+                        </li>
+
+                        <li>
+                            Mendorong kemandirian peserta didik.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="vision-card">
+
+                    <div class="vision-icon">
+                        🎯
+                    </div>
+
+                    <h3>
+                        Tujuan
+                    </h3>
+
+                    <p>
+                        Membantu masyarakat memperoleh pendidikan
+                        yang setara serta meningkatkan pengetahuan,
+                        keterampilan dan kepercayaan diri untuk
+                        menghadapi masa depan.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROGRAM
+    ========================== -->
+
+    <section class="section" id="program">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Program Belajar</span>
+
+                <h2>Pilih Program Pendidikan</h2>
+
+                <p>
+                    Program pendidikan kesetaraan untuk berbagai
+                    jenjang pendidikan.
+                </p>
+
+            </div>
+
+
+            <div class="program-grid">
+
+                <!-- Paket A -->
+
+                <div class="program-card">
+
+                    <div class="program-number">
+                        A
+                    </div>
+
+                    <h3>
+                        Paket A
+                    </h3>
+
+                    <p>
+                        Program pendidikan kesetaraan yang setara
+                        dengan jenjang Sekolah Dasar (SD).
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Pendidikan dasar
+                        </li>
+
+                        <li>
+                            Pembelajaran fleksibel
+                        </li>
+
+                        <li>
+                            Pendampingan peserta didik
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Paket B -->
+
+                <div class="program-card">
+
+                    <div class="program-number">
+                        B
+                    </div>
+
+                    <h3>
+                        Paket B
+                    </h3>
+
+                    <p>
+                        Program pendidikan kesetaraan yang setara
+                        dengan jenjang Sekolah Menengah Pertama
+                        (SMP).
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Pendidikan menengah pertama
+                        </li>
+
+                        <li>
+                            Pembelajaran terarah
+                        </li>
+
+                        <li>
+                            Pendampingan peserta didik
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- Paket C -->
+
+                <div class="program-card">
+
+                    <div class="program-number">
+                        C
+                    </div>
+
+                    <h3>
+                        Paket C
+                    </h3>
+
+                    <p>
+                        Program pendidikan kesetaraan yang setara
+                        dengan jenjang Sekolah Menengah Atas (SMA).
+                    </p>
+
+                    <ul>
+
+                        <li>
+                            Pendidikan menengah atas
+                        </li>
+
+                        <li>
+                            Persiapan melanjutkan pendidikan
+                        </li>
+
+                        <li>
+                            Pengembangan keterampilan
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CARA MENDAFTAR
+    ========================== -->
+
+    <section class="section register-info">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span style="color:#ffd43b;">
+                    Cara Mendaftar
+                </span>
+
+                <h2 style="color:white;">
+                    Mudah untuk Bergabung
+                </h2>
+
+                <p style="color:#dbe8f7;">
+                    Ikuti beberapa langkah sederhana berikut
+                    untuk melakukan pendaftaran.
+                </p>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <div class="step-number">
+                        1
+                    </div>
+
+                    <h3>
+                        Isi Formulir
+                    </h3>
+
+                    <p>
+                        Isi formulir pendaftaran secara lengkap
+                        melalui website.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        2
+                    </div>
+
+                    <h3>
+                        Verifikasi Data
+                    </h3>
+
+                    <p>
+                        Tim PKBM akan melakukan pengecekan
+                        terhadap data pendaftaran.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        3
+                    </div>
+
+                    <h3>
+                        Konfirmasi
+                    </h3>
+
+                    <p>
+                        Peserta mendapatkan informasi mengenai
+                        proses selanjutnya.
+                    </p>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">
+                        4
+                    </div>
+
+                    <h3>
+                        Mulai Belajar
+                    </h3>
+
+                    <p>
+                        Peserta siap mengikuti kegiatan pembelajaran
+                        sesuai program.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BERITA
+    ========================== -->
+
+    <section class="section news" id="berita">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Informasi Terbaru</span>
+
+                <h2>Berita Terkini</h2>
+
+                <p>
+                    Informasi terbaru seputar kegiatan dan program
+                    PKBM Lam Alif.
+                </p>
+
+            </div>
+
+
+            <div class="news-grid">
+
+                <article class="news-card">
+
+                    <div
+                        class="news-image"
+                        style="
+                        background-image:url(
+                        'https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=800&q=80'
+                        );
+                        ">
+                    </div>
+
+                    <div class="news-content">
+
+                        <span class="news-date">
+                            02 Oktober 2026
+                        </span>
+
+                        <h3>
+                            Pendaftaran Peserta Didik Baru Dibuka
+                        </h3>
+
+                        <p>
+                            PKBM Lam Alif membuka pendaftaran
+                            peserta didik baru untuk program
+                            Paket A, Paket B dan Paket C.
+                        </p>
+
+                        <a href="#" class="read-more">
+                            Baca Selengkapnya →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="news-card">
+
+                    <div
+                        class="news-image"
+                        style="
+                        background-image:url(
+                        'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80'
+                        );
+                        ">
+                    </div>
+
+                    <div class="news-content">
+
+                        <span class="news-date">
+                            28 September 2026
+                        </span>
+
+                        <h3>
+                            Kegiatan Pembelajaran PKBM
+                        </h3>
+
+                        <p>
+                            Kegiatan pembelajaran dilaksanakan
+                            dengan suasana yang nyaman dan
+                            menyenangkan bagi peserta didik.
+                        </p>
+
+                        <a href="#" class="read-more">
+                            Baca Selengkapnya →
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <article class="news-card">
+
+                    <div
+                        class="news-image"
+                        style="
+                        background-image:url(
+                        'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80'
+                        );
+                        ">
+                    </div>
+
+                    <div class="news-content">
+
+                        <span class="news-date">
+                            20 September 2026
+                        </span>
+
+                        <h3>
+                            Informasi Program Pendidikan Kesetaraan
+                        </h3>
+
+                        <p>
+                            Kenali lebih jauh program Paket A,
+                            Paket B dan Paket C yang tersedia
+                            di PKBM Lam Alif.
+                        </p>
+
+                        <a href="#" class="read-more">
+                            Baca Selengkapnya →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PENDAFTARAN
+    ========================== -->
+
+    <section class="section registration" id="pendaftaran">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Pendaftaran</span>
+
+                <h2>Daftar Sebagai Peserta Didik</h2>
+
+                <p>
+                    Lengkapi data berikut untuk mengajukan
+                    pendaftaran di PKBM Lam Alif.
+                </p>
+
+            </div>
+
+
+            <div class="form-wrapper">
+
+                <form
+                    action="#"
+                    method="POST"
+                    onsubmit="kirimPendaftaran(event)"
+                >
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label>
+                                Nama Lengkap
+                            </label>
+
+                            <input
+                                type="text"
+                                id="nama"
+                                placeholder="Masukkan nama lengkap"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Nomor WhatsApp
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="telepon"
+                                placeholder="08xxxxxxxxxx"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="nama@email.com"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Pilih Program
+                            </label>
+
+                            <select id="programPilihan" required>
+
+                                <option value="">
+                                    Pilih Program
+                                </option>
+
+                                <option value="Paket A">
+                                    Paket A
+                                </option>
+
+                                <option value="Paket B">
+                                    Paket B
+                                </option>
+
+                                <option value="Paket C">
+                                    Paket C
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>
+                                Alamat
+                            </label>
+
+                            <textarea
+                                id="alamat"
+                                placeholder="Masukkan alamat lengkap"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="form-group full">
+
+                            <label>
+                                Pesan / Informasi Tambahan
+                            </label>
+
+                            <textarea
+                                id="pesan"
+                                placeholder="Tuliskan informasi tambahan jika ada..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+                        Kirim Pendaftaran
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         KONTAK
+    ========================== -->
+
+    <section class="section contact">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <span>Hubungi Kami</span>
+
+                <h2>Informasi Kontak</h2>
+
+                <p>
+                    Jangan ragu untuk menghubungi kami apabila
+                    membutuhkan informasi lebih lanjut.
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+                <div class="contact-card">
+
+                    <div class="icon">
+                        📍
+                    </div>
+
+                    <h3>
+                        Alamat
+                    </h3>
+
+                    <p>
+                        Jl. Contoh No. 123<br>
+                        Kabupaten/Kota
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="icon">
+                        📱
+                    </div>
+
+                    <h3>
+                        WhatsApp
+                    </h3>
+
+                    <p>
+                        08XX-XXXX-XXXX
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card">
+
+                    <div class="icon">
+                        ✉️
+                    </div>
+
+                    <h3>
+                        Email
+                    </h3>
+
+                    <p>
+                        info@pkbmlamalif.sch.id
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>
+                    PKBM Lam Alif
+                </h3>
+
+                <p>
+                    Pusat Kegiatan Belajar Masyarakat yang hadir
+                    untuk memberikan kesempatan belajar bagi
+                    masyarakat melalui pendidikan kesetaraan.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Navigasi
+                </h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#about">
+                            Tentang Kami
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#visi">
+                            Visi & Misi
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#program">
+                            Program
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#berita">
+                            Berita
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Program
+                </h3>
+
+                <ul>
+
+                    <li>
+                        Paket A
+                    </li>
+
+                    <li>
+                        Paket B
+                    </li>
+
+                    <li>
+                        Paket C
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 PKBM Lam Alif.
+            Semua Hak Dilindungi.
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        function kirimPendaftaran(event) {
+
+            event.preventDefault();
+
+            const nama =
+                document.getElementById("nama").value;
+
+            const telepon =
+                document.getElementById("telepon").value;
+
+            const email =
+                document.getElementById("email").value;
+
+            const program =
+                document.getElementById("programPilihan").value;
+
+            const alamat =
+                document.getElementById("alamat").value;
+
+            const pesan =
+                document.getElementById("pesan").value;
+
+
+            const nomorAdmin = "628XXXXXXXXXX";
+
+
+            const text =
+                `Halo Admin PKBM Lam Alif,
+
+Saya ingin melakukan pendaftaran.
+
+Nama: ${nama}
+WhatsApp: ${telepon}
+Email: ${email}
+Program: ${program}
+Alamat: ${alamat}
+
+Pesan:
+${pesan}
+
+Mohon informasi selanjutnya. Terima kasih.`;
+
+
+            const url =
+                "https://wa.me/" +
+                nomorAdmin +
+                "?text=" +
+                encodeURIComponent(text);
+
+
+            window.open(url, "_blank");
+
+        }
+
+    </script>
+
+</body>
+</html>
+```
